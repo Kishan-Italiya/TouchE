@@ -10,7 +10,7 @@ import AVKit
 import Alamofire
 import AVFoundation
 
-public class VideoViewController: UIViewController {
+internal class VideoViewController: UIViewController {
     
     //MARK: - Variables
     var VideoString = ""
