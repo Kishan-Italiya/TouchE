@@ -18,6 +18,7 @@ let package = Package(
         .package(url: "https://github.com/evgenyneu/Cosmos.git", from: "24.0.0"),
         .package(url: "https://github.com/olbartek/FSPagerView.git", from: "0.8.3"),
         .package(url: "https://github.com/aws-amplify/aws-sdk-ios-spm.git", from: "2.27.6")
+        
     ],
     
     targets: [

@@ -24,7 +24,7 @@ import IQKeyboardManagerSwift
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let urlString = "https://api-cluster.system.touchetv.com"
-        var userToken = ""
+        var userToken = "" // If user already login assign save token here.
         
         TouchEPluginVC.shared.validateURLAndToken(urlString: urlString, token: userToken) { isURLValid, isTokenValid in
             if isURLValid && isTokenValid {
