@@ -94,43 +94,43 @@ func save() {
 Get movie list using getMovieDetail method 
 
 ```swift
-    var VideoListData : HomeData?
-    var CartDataARY : CartData?
+var VideoListData : HomeData?
+var CartDataARY : CartData?
     
-    //use this method for get movie list 
-    TouchEPluginVC.shared.getMovieDetail { result in
-        switch result {
-        case .success(let homeData):
-            self.VideoListData = homeData
-            self.dataTBL.reloadData()
-        case .failure(let error):
-            self.ShowAlert1(title: "Error", message: "\(error.localizedDescription)")
-        }
+//use this method for get movie list 
+TouchEPluginVC.shared.getMovieDetail { result in
+    switch result {
+    case .success(let homeData):
+        self.VideoListData = homeData
+        self.dataTBL.reloadData()
+    case .failure(let error):
+        self.ShowAlert1(title: "Error", message: "\(error.localizedDescription)")
     }
+}
     
-    //Use this method for get my cart count         
-    TouchEPluginVC.shared.getCartDataCount { result in
-        switch result {
-        case .success(let cartData):
-            self.CartDataARY = cartData
-            self.cartCountBTN.setTitle("\(self.CartDataARY?.count ?? 0)", for: .normal)
-        case .failure(let error):
-            self.ShowAlert1(title: "Error", message: "\(error.localizedDescription)")
-        }
+//Use this method for get my cart count         
+TouchEPluginVC.shared.getCartDataCount { result in
+    switch result {
+    case .success(let cartData):
+        self.CartDataARY = cartData
+        self.cartCountBTN.setTitle("\(self.CartDataARY?.count ?? 0)", for: .normal)
+    case .failure(let error):
+        self.ShowAlert1(title: "Error", message: "\(error.localizedDescription)")
     }
+}
         
 ```
 ### Navigation to Movie Details Screen
 
 ```swift 
-    let viewcontroller = VideoDetailViewController()
-    viewcontroller.modalPresentationStyle = .custom
-    viewcontroller.VideoListData = VideoListData[SelectedIndex]
-    self.navigationController?.pushViewController(viewcontroller, animated: true)
+let viewcontroller = VideoDetailViewController()
+viewcontroller.modalPresentationStyle = .custom
+viewcontroller.VideoListData = VideoListData[SelectedIndex]
+self.navigationController?.pushViewController(viewcontroller, animated: true)
 ```
 ### Navigation to My Cart Screen
 
 ```swift 
-    let viewcontroller = MyCartVC()
-    self.navigationController?.pushViewController(viewcontroller, animated: true)
+let viewcontroller = MyCartVC()
+self.navigationController?.pushViewController(viewcontroller, animated: true)
 ```
